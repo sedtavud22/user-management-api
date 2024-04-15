@@ -221,7 +221,9 @@ namespace UserManagement.API.Controllers
                     PermissionID = x.PermissionID,
                 }).ToList();
 
-                user.Permissions = perms;
+                var filteredPerms = perms.Where(x => (x.IsDeletable || x.IsReadable || x.IsWriteable) == true).ToList();
+
+                user.Permissions = filteredPerms;
             }
 
             var updatedUser = await userRepository.UpdateAsync(id, user);
