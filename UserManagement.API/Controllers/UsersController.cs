@@ -133,7 +133,7 @@ namespace UserManagement.API.Controllers
                 }); 
             }
 
-            var totalCount = await userRepository.GetTotalCount();
+            var totalCount = await userRepository.GetTotalCount(query);
 
             var response = new GetAllResponse
             {

@@ -139,8 +139,13 @@ namespace UserManagement.API.Repositories.Implementation
             }
         }
 
-        public async Task<int> GetTotalCount()
+        public async Task<int> GetTotalCount(string? query = null)
         {
+            if (string.IsNullOrWhiteSpace(query) == false)
+            {
+                return await dbContext.Users.Where(x => (x.FirstName.Contains(query) || x.LastName.Contains(query))).CountAsync();
+            }
+
             return await dbContext.Users.CountAsync();
         }
     }

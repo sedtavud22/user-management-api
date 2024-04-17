@@ -15,6 +15,6 @@ namespace UserManagement.API.Repositories.Interface
         Task<User?> UpdateAsync(string id, User user);
         Task<User?> DeleteAsync(string id);
 
-        Task<int> GetTotalCount();
+        Task<int> GetTotalCount(string? query = null);
     }
 }
