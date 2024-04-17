@@ -46,7 +46,7 @@ namespace UserManagement.API.Controllers
                     UserID = request.Id,
                     IsDeletable = x.IsDeletable,
                     IsReadable = x.IsReadable,
-                    IsWriteable = x.IsReadable,
+                    IsWriteable = x.IsWriteable,
                     PermissionID = x.PermissionID,
                 }).ToList();
 

@@ -20,7 +20,7 @@
     {
         public required string PermissionID { get; set; }
         public bool IsReadable { get; set; }
-        public bool IsWritable { get; set; }
+        public bool IsWriteable { get; set; }
         public bool IsDeletable { get; set; }
     }
 }
